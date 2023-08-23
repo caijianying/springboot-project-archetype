@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <parent>
+        <artifactId>framework-bom</artifactId>
+        <groupId>com.xiaobaicai.framework</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>com.xiaobaicai.demo</groupId>
+    <artifactId>springboot-project-archetype</artifactId>
+    <version>${revision}</version>
+
+    <properties>
+        <revision>1.0.0</revision>
+        <framework.reversion>1.0.0</framework.reversion>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <mybatis-plus.boot.version>3.4.1</mybatis-plus.boot.version>
+    </properties>
+
+    <modules>
+        <module>demo-starter</module>
+        <module>demo-app</module>
+        <module>demo-web</module>
+        <module>demo-client</module>
+        <module>demo-infrastructure</module>
+        <module>demo-domain</module>
+        <module>demo-util</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--项目module版本管理-->
+            <dependency>
+                <groupId>com.xiaobaicai.demo</groupId>
+                <artifactId>demo-util</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaobaicai.demo</groupId>
+                <artifactId>demo-infrastructure</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaobaicai.demo</groupId>
+                <artifactId>demo-domain</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaobaicai.demo</groupId>
+                <artifactId>demo-app</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaobaicai.demo</groupId>
+                <artifactId>demo-client</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaobaicai.demo</groupId>
+                <artifactId>demo-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaobaicai.framework</groupId>
+                <artifactId>framework-commons</artifactId>
+                <version>${framework.reversion}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiaobaicai.framework</groupId>
+                <artifactId>framework-intergration-base</artifactId>
+                <version>${framework.reversion}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.boot.version}</version>
+                <optional>true</optional>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
