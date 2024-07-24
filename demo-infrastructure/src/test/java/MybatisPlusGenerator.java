@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.baomidou.mybatisplus.generator.engine.VelocityTemplateEngine;
 
 import java.util.Collections;
@@ -30,7 +31,6 @@ public class MybatisPlusGenerator {
 
     /**
      * 数据库连接地址
-     * jdbc:mysql://127.0.0.1:3306/db_router_1?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
      */
     public static final String JDBC_URL =
         "jdbc:mysql://127.0.0.1:3306/project_archetype?useUnicode=true&noDatetimeStringSync=true&characterEncoding=utf-8"
@@ -85,6 +85,6 @@ public class MybatisPlusGenerator {
                 .mapperBuilder().enableBaseResultMap() // 生成通用的resultMap
                 .superClass(BaseMapper.class).formatMapperFileName("%sMapper").enableMapperAnnotation()
                 .formatXmlFileName("%sMapper");
-        }).templateEngine(new VelocityTemplateEngine()).execute();
+        }).templateEngine(new FreemarkerTemplateEngine()).execute();
     }
 }
